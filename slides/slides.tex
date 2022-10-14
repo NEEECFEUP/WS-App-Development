@@ -1,0 +1,61 @@
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\definecolor{EngColor}{RGB}{140, 45, 25}
+
+\setbeamercolor{title separator}{bg=EngColor,fg=EngColor}
+\setbeamercolor{progress bar in head/foot}{bg=EngColor,fg=EngColor}
+\setbeamercolor{palette primary}{bg=EngColor}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepackage{xspace}
+\usepackage{hyperref}
+
+\title{Workshop\\Introduction to App Development}
+\subtitle{A shallow dive into Flutter}
+\institute{NEEEC - FEUP}
+
+\date{October 2022}
+\author{André Campanhã}
+
+\logo{\includegraphics[height=1.5cm]{images/logo_oficial_bordo_c.png}}
+
+\usepgfplotslibrary{dateplot}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=EngColor,
+  filecolor=magenta,      
+  urlcolor=EngColor,
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\input{topics/topics}
+
+{
+  \logo{\includegraphics[height=1.5cm]{images/logo_oficial_branco_c.png}}
+  \setbeamercolor{palette secondary}{fg=black, bg=EngColor}
+  \begin{frame}[standout]
+    Questions?
+  \end{frame}
+}
+
+
+\end{document}
