@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,7 +15,21 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("Workshop App Development"),
       ),
-      body: Container(),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Hello world!"),
+            ElevatedButton(
+              onPressed: () {
+                developer.log('Hello!', name: 'app.log');
+              },
+              child: const Text("Click!"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

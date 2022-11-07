@@ -1,4 +1,0 @@
-{
-    "latex-workshop.latex.autoClean.run": "onBuilt",
-    "latex-workshop.latex.outDir": "%DIR%/../"
-}
