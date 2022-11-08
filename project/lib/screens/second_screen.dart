@@ -13,6 +13,14 @@ class SecondScreen extends StatefulWidget {
 }
 
 class _SecondScreenState extends State<SecondScreen> {
+  bool _active = false;
+
+  void handleTap() {
+    setState(() {
+      _active = !_active;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +33,33 @@ class _SecondScreenState extends State<SecondScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("Hello second world!"),
-            ElevatedButton(
-              onPressed: () {
-                developer.log('Hello!', name: 'app.log');
-              },
-              child: const Text("Click!"),
-            )
+            GestureDetector(
+              onTap: handleTap,
+              child: Box(active: _active),
+            ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Box extends StatelessWidget {
+  final bool active;
+  const Box({super.key, required this.active});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 200.0,
+      height: 200.0,
+      decoration: BoxDecoration(
+        color: active ? Colors.lightGreen[700] : Colors.grey[600],
+      ),
+      child: Center(
+        child: Text(
+          active ? 'Active' : 'Inactive',
+          style: const TextStyle(fontSize: 32.0, color: Colors.white),
         ),
       ),
     );
