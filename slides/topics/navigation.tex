@@ -1,0 +1,25 @@
+\section{Navigation}
+
+\begin{frame}{History stack}
+    \begin{figure}[h]
+        \includegraphics[width=.8\textwidth]{images/stack_representation.jpg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Navigation}
+    \begin{block}{Push}
+        \begin{minted}[fontsize=\footnotesize]{dart}
+Navigator.of(context).push(
+    MaterialPageRoute(
+        builder: (context) => const SongScreen(song: song),
+    ),
+);
+        \end{minted}
+    \end{block}
+
+    \begin{block}{Pop}
+        \begin{minted}[fontsize=\footnotesize]{dart}
+Navigator.of(context).pop("Return value");
+        \end{minted}
+    \end{block}
+\end{frame}

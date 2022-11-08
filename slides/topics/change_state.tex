@@ -1,0 +1,36 @@
+\section{Change the State}
+
+\begin{frame}[containsverbatim]{Detect Gestures}
+    Sometimes we need to detect input in things other than buttons...
+    
+    \begin{block}{Gesture detector}
+        \begin{minted}[fontsize=\footnotesize]{dart}
+GestureDetector(
+    onTap: handleTap,
+    child: Text("Hellooo"),
+)
+        \end{minted}
+    \end{block}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Change the state}
+    \begin{alertblock}{Potential Problems}
+		We can't simply mutate the state.
+
+        The framework needs to be notified, in order to rebuild the widget tree with the changes.
+	\end{alertblock}
+    
+\end{frame}
+
+\begin{frame}[containsverbatim]{Change the state}
+    \begin{alertblock}{setState}
+		You must use the setState function to mutate the state!
+
+        \begin{minted}[fontsize=\footnotesize]{dart}
+setState(() {
+    text = "banana";
+});
+        \end{minted}
+	\end{alertblock}
+    
+\end{frame}
